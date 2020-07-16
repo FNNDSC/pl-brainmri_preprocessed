@@ -116,7 +116,7 @@ Examples
 Check available pre-processed data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To get a listing of the internal tree of already processed and available FreeSurfer choices:
+To get a listing of the internal tree of already processed:
 
 .. code:: bash
 
