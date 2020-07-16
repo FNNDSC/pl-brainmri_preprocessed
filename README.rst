@@ -133,6 +133,8 @@ Simulate a processing delay
 To simulate a processing delay, specify some time in seconds:
 
 .. code:: bash
+
+
     docker run --rm -v $(pwd)/in:/incoming -v $(pwd)/out:/outgoing      \
             fnndsc/pl-brainmri_preprocessed brainmri_preprocessed.py                    \
             -P 20                                                       \
@@ -146,6 +148,8 @@ Copy only specific folders
  To copy only 'input_data' & 'ground_truth_slices'
 
 .. code:: bash
+
+
 docker run --rm -v $(pwd)/in:/incoming -v $(pwd)/out:/outgoing      \
         fnndsc/pl-brainmri_preprocessed brainmri_preprocessed.py                    \
         -c input,truth                                     \
