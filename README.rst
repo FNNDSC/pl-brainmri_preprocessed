@@ -150,8 +150,8 @@ Copy only specific folders
 .. code:: bash
 
 
-docker run --rm -v $(pwd)/in:/incoming -v $(pwd)/out:/outgoing      \
-        fnndsc/pl-brainmri_preprocessed brainmri_preprocessed.py                    \
-        -c input,truth                                     \
-        /incoming /outgoing           
+    docker run --rm -v $(pwd)/in:/incoming -v $(pwd)/out:/outgoing      \
+            fnndsc/pl-brainmri_preprocessed brainmri_preprocessed.py                    \
+            -c input,truth                                     \
+            /incoming /outgoing           
 
