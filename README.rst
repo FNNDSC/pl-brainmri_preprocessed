@@ -29,6 +29,7 @@ Synopsis
         [--version]                                                 \
         [--man]                                                     \
         [--meta]                                                    \
+        [--copySpec <copySpec>]                                     \
         <inputDir>
         <outputDir> 
 
@@ -53,6 +54,11 @@ Arguments
 
     [--meta]
     If specified, print plugin meta data.
+    
+    [--copySpec]
+    If specified, copies only specific directories
+    
+    
 
 
 Run
@@ -107,7 +113,41 @@ Thus, getting inline help is:
 Examples
 --------
 
+Check available pre-processed data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To get a listing of the internal tree of already processed and available FreeSurfer choices:
+
+.. code:: bash
 
 
+    docker run --rm -v $(pwd)/in:/incoming -v $(pwd)/out:/outgoing      \
+            fnndsc/pl-brainmri_preprocessed brainmri_preprocessed.py                    \
+            -T ../preprocessed                                          \
+            /incoming /outgoing
 
+
+Simulate a processing delay
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To simulate a processing delay, specify some time in seconds:
+
+.. code:: bash
+    docker run --rm -v $(pwd)/in:/incoming -v $(pwd)/out:/outgoing      \
+            fnndsc/pl-brainmri_preprocessed brainmri_preprocessed.py                    \
+            -P 20                                                       \
+            /incoming /outgoing
+            
+            
+
+Copy only specific folders
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            
+ To copy only 'input_data' & 'ground_truth_slices'
+
+.. code:: bash
+docker run --rm -v $(pwd)/in:/incoming -v $(pwd)/out:/outgoing      \
+        fnndsc/pl-brainmri_preprocessed brainmri_preprocessed.py                    \
+        -c input,truth                                     \
+        /incoming /outgoing           
 
